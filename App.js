@@ -13,7 +13,7 @@ const Title = () => (
 
 // React Components ?
 // Two ways:
-// Class based Component - old
+// Class based Component -  old
 // function based Component - new
 //Component Composition.
 const HeadingComponent = () => {
