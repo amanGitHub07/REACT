@@ -8,19 +8,7 @@
   </head>
   <body>
     <div id="root"></div>
-    
-    <!-- React and ReactDOM from CDN -->
-    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-    <!-- Babel for JSX -->
-    
-    <!-- We need Babel as Browser doesn't understand the JSX and React only run the code doesn't compile
-      Babel is required to transform JSX into plain JS (React.createElement)  that browser can execute and also with ReactCDN + inline JSX Babel is mandatory
-      In Simple words React is runtime and Babel is compile time. Different responsibilities
-      -->
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-
-    <script src="./App.js" type="text/babel"></script>
+    <script src="./App.js" type="module"></script>
 
 </body>
 </html>
