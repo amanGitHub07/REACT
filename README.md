@@ -24,4 +24,36 @@ Pizza Eg... or instamart eg.
 - HTTps
 - Tree shaking - removed unused code for us for eg there are couple of functions which are not used by our application then parcel will remove that for us.
 - Different build for dev and prod
-- 
+
+/*
+1. HeaderComponent
+  - Logo
+  - Nav Items
+
+2. Body
+  - Search 
+  - Restaurant Container
+  - Restaurant Card
+    - Image
+    - Name
+    - Cuisine
+    - Rating
+3. Footer
+  - Links
+  - Copyright
+  - Contact
+  - Address
+
+  Always build from top level component.
+*/
+
+
+REACT HOOKS:
+	- Normal JS function
+	- Written by Facebook Developer
+	- Where it is written it is written inside react where imported from node-modules
+	- How to use it?
+		○ We need to import it.
+	- Two imp hooks
+		○ useState() - SuperPowerful State variable in React, used to generate states in React.
+		○ useEffect() - 

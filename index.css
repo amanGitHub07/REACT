@@ -32,7 +32,7 @@
 .res-card{
     margin:5px;
     width: 200px;
-    height: 300px;
+    height: 500px;
     padding: 5px;
     background-color: #f0f0f0;
 }
@@ -51,4 +51,9 @@
 
 .search{
     padding: 10px;
+}
+
+.filter-btn{
+    margin: 10px;
+    cursor:pointer;
 }
