@@ -1,57 +1,10 @@
 import RestaurantCard from "./Restaurant";
 import resObj from "../utils/mockData";
 import { useState, useEffect }from "react";
+import Shimmer from "./Shimmer";
 
 export const Body = () => {
-    const [listOfRestaurant, setListOfRestaurant] = useState([
-  {
-    "info": {
-      "id": "733092",
-      "cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2026/4/24/a05192d2-1044-482c-b4bd-b0afb1b60c42_733092.jpg",
-      "name": "Caterspoint",
-      "cuisines": [
-        "Salads",
-        "Healthy food",
-        "Snacks",
-        "pastas",
-        "Lebanese",
-        "Mexican",
-        "Desserts",
-        "Beverages"
-      ],
-      "avgRatingString": "4.4",
-      "costForTwo": "₹500 for two"
-    }
-  },
-  {
-    "info": {
-      "id": "621512",
-      "cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2025/6/16/29ddfffe-7016-4548-ae60-1a8f348ffbe6_621512.jpg",
-      "name": "The Belgian Waffle Co.",
-      "cuisines": [
-        "Waffle",
-        "Desserts",
-        "Ice Cream",
-        "Beverages"
-      ],
-      "avgRatingString": "4.6",
-      "costForTwo": "₹200 for two"
-    }
-  },
-  {
-    "info": {
-      "id": "5934",
-      "cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2025/6/18/ac30c19f-5572-448a-9c6a-44be9d986625_5934.jpg",
-      "name": "Burger King",
-      "cuisines": [
-        "Burgers",
-        "American"
-      ],
-      "avgRatingString": "3.1",
-      "costForTwo": "₹350 for two"
-    }
-  }
-]);
+    const [listOfRestaurant, setListOfRestaurant] = useState([]);
 
      useEffect(()=>{
         fetchData();
@@ -75,7 +28,7 @@ const fetchData = async () => {
   }
 };
 
-    return(
+    return listOfRestaurant.length === 0 ? <Shimmer/> : (
       <div className = "body">
           <div className="filter">
             <button className="filter-btn" onClick={() => {
