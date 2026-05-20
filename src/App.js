@@ -2,6 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import HeaderComponent from "./components/Header";
 import  Body  from "./components/Body";
+import { createBrowserRouter, RouterProvider }  from "react-router-dom";
+import AboutUs from "./components/AboutUs";
+import ContactUs from "./components/ContactUs";
+import ErrorPage from "./components/ErrorPage"; 
 
 const AppLayout = () => {
   return (
@@ -12,5 +16,21 @@ const AppLayout = () => {
   )
 }
 
+const appRouter = createBrowserRouter([
+  {
+    path:"/",
+    element: <AppLayout/>,
+    errorElement: <ErrorPage/>
+  },
+  {
+    path:'/about-us',
+    element: <AboutUs/>
+  },
+  {
+    path:'/contactus',
+    element: <ContactUs/>
+  }
+])
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayout/>);
+root.render(<RouterProvider router={appRouter} />);
+
