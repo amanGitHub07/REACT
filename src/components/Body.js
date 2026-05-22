@@ -51,7 +51,7 @@ const fetchData = async () => {
                     setFilteredListOfRestaurants(listOfRestaurant);
                 } else {
                    setTopRatedRestaurant('Rating > 4.0');
-                   const filteredList = listOfRestaurant.filter(res => res.info.avgRatingString > 4.0);
+                   const filteredList = listOfRestaurant.filter(res => res.info.avgRatingString > 4.2);
                    setFilteredListOfRestaurants(filteredList);
                   }
             } }>{topRatedRestaurant}</button> 

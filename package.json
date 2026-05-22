@@ -19,6 +19,7 @@
   "homepage": "https://github.com/amanGitHub07/REACT#readme",
   "_comment": "Caret ^ means auto-updates minor/patch versions",
   "devDependencies": {
+    "local-cors-proxy": "^1.1.0",
     "parcel": "^2.16.4"
   },
   "dependencies": {

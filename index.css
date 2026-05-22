@@ -78,3 +78,13 @@
     padding: 0 10px;
     cursor:pointer;
 }
+
+.user-card{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:10px;
+    border:1px solid grey;
+    width:200px;
+
+}
