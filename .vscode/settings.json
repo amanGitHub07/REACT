@@ -1,0 +1,32 @@
+{
+  "javascript.suggest.enabled": false,
+  "typescript.suggest.enabled": false,
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": true,
+    "strings": true
+  },
+  "editor.suggest.showWords": false,
+  "editor.suggest.showSnippets": false,
+  "editor.suggest.showFunctions": false,
+  "editor.suggest.showMethods": false,
+  "editor.suggest.showConstructors": false,
+  "editor.suggest.showFields": false,
+  "editor.suggest.showVariables": false,
+  "editor.suggest.showClasses": false,
+  "editor.suggest.showModules": false,
+  "editor.suggest.showProperties": false,
+  "editor.suggest.showEvents": false,
+  "editor.suggest.showOperators": false,
+  "editor.suggest.showUnits": false,
+  "editor.suggest.showValues": false,
+  "editor.suggest.showConstants": false,
+  "editor.suggest.showEnums": false,
+  "editor.suggest.showKeywords": false,
+  "editor.suggest.showColors": false,
+  "editor.suggest.showFiles": false,
+  "editor.suggest.showReferences": false,
+  "editor.suggest.showFolders": false,
+  "editor.suggest.showTypeParameters": false,
+  "editor.suggest.showIssues": false
+}
