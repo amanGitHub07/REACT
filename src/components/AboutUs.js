@@ -10,6 +10,10 @@ class AboutUs extends React.Component {
   componentDidMount(){
     console.log("Parent componentDidMount");
   }
+
+  componentWillMound(){
+    console.log("Parent componentWillUnmount");
+  }
   render() {
     console.log("Parent Render");
     return (
