@@ -1,34 +1,40 @@
 import RestaurantCard from "./Restaurant";
 import resObj from "../utils/mockData";
-import { useState, useEffect }from "react";
+import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
+import useListOfRestaurant from "../utils/useListOfRestaurant";
 
 export const Body = () => {
-    const [listOfRestaurant, setListOfRestaurant] = useState([]);
+    // const [listOfRestaurant, setListOfRestaurant] = useState([]);
     const [filteredListOfRestaurants, setFilteredListOfRestaurants] = useState([]);
     const [topRatedRestaurant,setTopRatedRestaurant] = useState(["Rating > 4.0"]);
-     useEffect(()=>{
-        fetchData();
-    },[]);
-    
-const fetchData = async () => {
-  try {
-    const response = await fetch(
-      "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
-    );
-    const data = await response.json();
-    console.log("Aman",data);
+    //  useEffect(()=>{
+    //     fetchData();
+    // },[]);
+    const listOfRestaurant = useListOfRestaurant();
 
-    const restaurants = data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants 
-      || data?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-      || data?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-      || [];
-    setListOfRestaurant(restaurants);
-    setFilteredListOfRestaurants(restaurants);
-  } catch (error) {
-    console.log("ERROR:", error);
-  }
-};
+    // Sync filteredListOfRestaurants with listOfRestaurant when it loads/changes
+    useEffect(() => {
+      setFilteredListOfRestaurants(listOfRestaurant);
+    }, [listOfRestaurant]);
+// const fetchData = async () => {
+//   try {
+//     const response = await fetch(
+//       "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
+//     );
+//     const data = await response.json();
+//     console.log("Aman",data);
+
+//     const restaurants = data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants 
+//       || data?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+//       || data?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+//       || [];
+//     setListOfRestaurant(restaurants);
+//     setFilteredListOfRestaurants(restaurants);
+//   } catch (error) {
+//     console.log("ERROR:", error);
+//   }
+// };
 
     return listOfRestaurant.length === 0 ? <Shimmer/> : (
       <div className = "body">
