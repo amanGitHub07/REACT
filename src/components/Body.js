@@ -3,6 +3,7 @@ import resObj from "../utils/mockData";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import useListOfRestaurant from "../utils/useListOfRestaurant";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 export const Body = () => {
     // const [listOfRestaurant, setListOfRestaurant] = useState([]);
@@ -35,7 +36,9 @@ export const Body = () => {
 //     console.log("ERROR:", error);
 //   }
 // };
-
+  if(useOnlineStatus() === false) {
+    return <h1>Looks like you are offline!! Please check your internet connection.</h1>
+  }
     return listOfRestaurant.length === 0 ? <Shimmer/> : (
       <div className = "body">
           <div className="filter">
