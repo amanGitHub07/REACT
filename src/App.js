@@ -7,6 +7,15 @@ import AboutUs from "./components/AboutUs";
 import ContactUs from "./components/ContactUs";
 import ErrorPage from "./components/ErrorPage"; 
 import RestaurantMenu from "./components/RestaurantMenu";
+import Shimmer from "./components/Shimmer";
+//chunking
+//code splitting
+//dynamic import
+//lazy loading
+//on demand loading
+
+
+const Grocery = React.lazy(() => import("./components/GroceryStore"));
 
 const AppLayout = () => {
   return (
@@ -15,7 +24,7 @@ const AppLayout = () => {
       <Outlet />
     </div>
   )
-}
+} 
 
 const appRouter = createBrowserRouter([
   {
@@ -37,6 +46,12 @@ const appRouter = createBrowserRouter([
         {
           path:'/restaurant/:id',
           element: <RestaurantMenu/>
+        },
+        {
+          path:'/grocery',
+          element: <React.Suspense fallback={
+            <Shimmer/>
+          }><Grocery/></React.Suspense>
         }
       ],
     errorElement: <ErrorPage/>
